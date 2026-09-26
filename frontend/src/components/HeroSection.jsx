@@ -1,123 +1,178 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, MessageCircle, ShieldCheck, Zap } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowRight,
+  MessageCircle,
+  ShieldCheck,
+  Sparkles,
+  Award,
+} from "lucide-react";
 
 // 1. IMPORT GAMBAR DARI ASSETS
-// Sesuaikan nama file 'hero-miniature.png' dengan nama file asli di folder assets kamu
-import heroImg from '../assets/3.png'; 
+import heroImg from "../assets/3.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-[#FAFAFA] overflow-hidden pt-10 pb-20">
-      {/* Ornamen Background */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/40 rounded-full blur-[120px] -z-10" />
+    <section className="relative bg-[#F8FAFC] overflow-hidden pt-12 pb-24 border-b border-slate-200/80">
+      {/* Dynamic Ambient Blur Layer (Memberi Depth & Kehangatan agar tidak flat) */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[130px] pointer-events-none -z-0" />
+      <div className="absolute bottom-5 left-10 w-[420px] h-[420px] bg-amber-100/50 rounded-full blur-[110px] pointer-events-none -z-0" />
 
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
-          {/* SISI KIRI: TEKS */}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* SISI KIRI: TEKS EDITORIAL BERKELAS */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -35 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-              <Zap size={14} className="fill-orange-500" /> Premium Miniature Studio
+            {/* Curated Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 text-[#0F2744] text-[11px] font-semibold uppercase tracking-[0.2em] mb-6 shadow-sm">
+              <Sparkles size={14} className="text-amber-500 fill-amber-500" />
+              <span>Curated Corporate Merchandise</span>
             </div>
-            
-            <h1 className="text-6xl lg:text-7xl font-black leading-[1.1] mb-6 text-slate-900">
-              Rumpun Art <br />
-              <span className="text-orange-500 italic">Work.</span>
+
+            {/* Headline Editorial */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.1] mb-6 text-slate-950 tracking-tight">
+              Diameter <br />
+              <span className="font-semibold text-[#0F2744] italic relative inline-block">
+                Souvenir.
+                <svg
+                  className="absolute -bottom-2 left-0 w-full h-3 text-amber-400/70"
+                  viewBox="0 0 200 8"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M1 5.5C40 2 120 2 199 5.5"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </h1>
-            
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
-             Rumpun Art Work memiliki bidang usaha yang bergerak di bidang handycraft. Produk
-              kami berupa heavy utility model, terkhusus miniatur kapal dan produk-produk yang
-              berhubungan dengan dunia maritim dan masih banyak scale model lainnya sesuai
-              permintaan. Bahan utama dari material resin, fiber, dan acrilyc.
-              Sebagai gift ataupun koleksi pribadi, mari wujudkan bersama Rumpun Art Work. 
+
+            <p className="text-base sm:text-lg text-slate-600 mb-10 leading-relaxed max-w-xl font-normal">
+              Spesialis pengadaan cenderamata korporat kustom, gift set
+              eksklusif, dan plakat presisi tinggi. Menggabungkan kurasi
+              material pilihan dengan pengerjaan detail untuk menyempurnakan
+              impresi prestisius brand dan instansi Anda.
             </p>
 
-           <div className="flex flex-wrap gap-4">
-  <Button
-    className="bg-orange-500 hover:bg-orange-600 text-white h-14 px-8 rounded-2xl text-md font-bold shadow-xl shadow-orange-200 transition-all hover:-translate-y-1 gap-2"
-  >
-    Jelajahi Produk <ArrowRight size={18} />
-  </Button>
+            {/* Tombol Tindakan / CTA */}
+            <div className="flex flex-wrap gap-4 items-center">
+              <Button
+                onClick={() => {
+                  const elem = document.getElementById("products");
+                  if (elem) elem.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-[#0F2744] hover:bg-[#1D4ED8] text-white h-14 px-8 rounded-2xl text-sm font-semibold shadow-xl shadow-blue-950/15 transition-all duration-300 hover:-translate-y-1 flex items-center gap-2"
+              >
+                <span>Jelajahi Katalog</span>
+                <ArrowRight size={18} />
+              </Button>
 
-  <a
-    href="https://wa.me/6281259724486?text=Halo%20Rumpun%20Artwork%2C%20saya%20ingin%20konsultasi%20tentang%20produk%20dan%20layanan%20Anda."
-    target="_blank"
-    rel="noreferrer"
-    className="h-14 px-8 rounded-2xl text-md font-bold border-2 border-slate-200 hover:border-orange-500 hover:text-orange-500 transition-all bg-white flex items-center justify-center"
-  >
-    Hubungi Kami
-  </a>
-</div>
+              <a
+                href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
+                target="_blank"
+                rel="noreferrer"
+                className="h-14 px-8 rounded-2xl text-sm font-semibold border-2 border-slate-200 hover:border-[#0F2744] hover:text-[#0F2744] transition-all bg-white text-slate-700 flex items-center justify-center gap-2 shadow-sm"
+              >
+                <MessageCircle size={18} className="text-emerald-500" />
+                <span>Konsultasi WhatsApp</span>
+              </a>
+            </div>
 
+            {/* Quick Metrics Trust Bar */}
+            <div className="mt-12 pt-8 border-t border-slate-200/80 flex flex-wrap items-center gap-6 text-xs text-slate-500 font-medium">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                Kapasitas Produksi Skala Besar
+              </div>
+              <span>•</span>
+              <div>Custom Logo & Finishing Presisi</div>
+              <span>•</span>
+              <div>Garansi Standar Mutu</div>
+            </div>
           </motion.div>
 
-          {/* Visual Kanan - Compact & Modern */}
-<motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8 }}
-  className="relative w-full flex justify-center lg:justify-end items-center"
->
-  {/* Glow Background - Diperkecil agar tidak terlalu menyebar */}
-  <div className="absolute w-[80%] h-[80%] bg-orange-100/50 rounded-full blur-[80px] -z-10" />
+          {/* SISI KANAN: FRAME VISUAL PORTOFOLIO */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full flex justify-center lg:justify-end items-center"
+          >
+            {/* Ambient Backlight */}
+            <div className="absolute w-[85%] h-[85%] bg-blue-100/70 rounded-full blur-[80px] -z-10" />
 
-  <div className="relative w-full max-w-[550px]"> {/* Lebar maksimal dikurangi sedikit */}
-    
-    {/* Frame Gambar - Dibuat lebih rendah (Landscape) */}
-    <motion.div 
-      whileHover={{ y: -5 }}
-      className="relative z-10 bg-white p-2 md:p-3 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.08)] border border-slate-100"
-    >
-      {/* Menggunakan aspect-video agar kontainer mengikuti bentuk horizontal miniatur */}
-      <div className="overflow-hidden rounded-[1.5rem] bg-slate-50 aspect-video flex items-center justify-center">
-        <img
-          className="w-full h-full object-cover" // Gunakan object-cover agar gambar penuh & pas
-          alt="Rumpun Art Work Miniature"
-          src={heroImg} 
-        />
-      </div>
-    </motion.div>
+            <div className="relative w-full max-w-[540px]">
+              {/* Frame Foto Utama bergaya Gallery Canvas */}
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.3 }}
+                className="relative z-10 bg-white p-3 md:p-4 rounded-[2.5rem] shadow-[0_20px_50px_rgba(15,39,68,0.08)] border border-slate-200/90"
+              >
+                <div className="overflow-hidden rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center relative group">
+                  <img
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Diameter Souvenir Showcase"
+                    src={heroImg}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F2744]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </motion.div>
 
-    {/* Badge Kiri Atas - Ukuran disesuaikan */}
-    <motion.div 
-      animate={{ y: [0, -8, 0] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute -top-4 -left-4 md:-left-8 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg z-20 flex items-center gap-3 border border-orange-100"
-    >
-      <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
-        <ShieldCheck size={18} />
-      </div>
-      <div className="pr-2">
-        <p className="text-[9px] text-slate-400 font-bold uppercase tracking-tighter">Premium</p>
-        <p className="text-xs font-bold text-slate-800">Detail Presisi</p>
-      </div>
-    </motion.div>
+              {/* Badge Kiri Atas - Garansi Presisi */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -top-4 -left-3 md:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl z-20 flex items-center gap-3 border border-slate-100"
+              >
+                <div className="w-9 h-9 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center text-blue-700">
+                  <ShieldCheck size={20} />
+                </div>
+                <div className="pr-2">
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                    Kualitas
+                  </p>
+                  <p className="text-xs font-bold text-slate-900">
+                    Kurasi Presisi
+                  </p>
+                </div>
+              </motion.div>
 
-    {/* Badge Kanan Bawah - Dibuat lebih kecil & elegan */}
-    <motion.div 
-      animate={{ y: [0, 8, 0] }}
-      transition={{ duration: 4, delay: 1, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute -bottom-4 -right-4 md:-right-6 bg-slate-900 px-4 py-3 rounded-2xl shadow-xl z-20 text-white border border-slate-700"
-    >
-      <div className="text-center">
-        <span className="block text-orange-400 font-black text-xl leading-none">100%</span>
-        <span className="text-[8px] uppercase font-bold tracking-widest text-slate-400 mt-1 block">Handmade</span>
-      </div>
-    </motion.div>
-
-    {/* Dekorasi tipis di belakang */}
-    <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-orange-500/10 rounded-xl -z-10 rotate-6" />
-  </div>
-</motion.div>
-
-
+              {/* Badge Kanan Bawah - Luxury Dark Pill Kontras */}
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{
+                  duration: 4,
+                  delay: 0.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute -bottom-4 -right-3 md:-right-6 bg-[#0F2744] px-5 py-3 rounded-2xl shadow-xl z-20 text-white border border-[#1E3A8A]"
+              >
+                <div className="flex items-center gap-3">
+                  <Award size={20} className="text-amber-400" />
+                  <div>
+                    <span className="block text-amber-400 font-extrabold text-sm leading-none">
+                      100% Premium
+                    </span>
+                    <span className="text-[9px] uppercase font-medium tracking-widest text-slate-300 mt-1 block">
+                      Craftsmanship
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

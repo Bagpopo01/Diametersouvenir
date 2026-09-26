@@ -37,7 +37,7 @@ class AdminPanelProvider extends PanelProvider
             
             // Branding & Tema
             ->viteTheme('resources/css/filament/admin/theme.css')
-            ->brandName('Rumpun Artwork')
+            ->brandName('Diameter Souvenir')
             ->brandLogo(asset('images/LOGO.png'))
             ->brandLogoHeight('2.5rem')     
             ->favicon(asset('images/LOGO.png'))
@@ -49,7 +49,7 @@ class AdminPanelProvider extends PanelProvider
                     <div class="px-6 py-5 mb-4 border-b border-gray-100/50 bg-gradient-to-br from-slate-50/50 to-transparent">
                         <div class="flex flex-col">
                             <p style="font-size: 11px; font-weight: 900; letter-spacing: 0.3em; background: linear-gradient(to right, #0284c7, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase;">
-                                Rumpun Artwork
+                                Diameter Souvenir
                             </p>
                             <p style="font-size: 8px; font-weight: 600; letter-spacing: 0.15em; color: #94a3b8; text-transform: uppercase; margin-top: 4px; display: flex; align-items: center; gap: 6px;">
                                 <span style="height: 1px; width: 12px; background: #cbd5e1;"></span>

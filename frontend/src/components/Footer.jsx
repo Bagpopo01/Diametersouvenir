@@ -1,20 +1,30 @@
-import { Instagram, Facebook, Twitter, Youtube, Send, MapPin, Phone, Box } from 'lucide-react';
+import {
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  Send,
+  MapPin,
+  Phone,
+  Box,
+  Sparkles,
+} from "lucide-react";
 // Pastikan path logo sudah sesuai
-import LogoDHS from '../assets/Logo DHS.png'; 
+import LogoDHS from "../assets/Logo DHS.png";
 
 const BrandLogo = () => (
-  <div className="flex items-center space-x-3">
-    <img 
-      src={LogoDHS} 
-      alt="Rumpun Art Work Logo" 
-      className="w-12 h-12 object-contain" 
+  <div className="flex items-center space-x-3 group">
+    <img
+      src={LogoDHS}
+      alt="Diameter Souvenir Logo"
+      className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105"
     />
     <div className="flex flex-col">
-      <span className="text-2xl font-black tracking-tight leading-none text-white">
-        Rumpun<span className="text-orange-500"> Art Work</span>
+      <span className="text-xl font-bold tracking-tight leading-none text-white">
+        Diameter <span className="text-sky-400 font-light">Souvenir</span>
       </span>
-      <span className="text-[10px] uppercase tracking-[0.3em] text-orange-500 font-bold mt-1">
-        Specialist Miniature
+      <span className="text-[10px] uppercase tracking-[0.25em] text-amber-400 font-semibold mt-1">
+        Custom Merchandise
       </span>
     </div>
   </div>
@@ -22,84 +32,127 @@ const BrandLogo = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a0a0a] text-white pt-24 pb-10 overflow-hidden">
-      {/* Garis aksen orange di bagian atas */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-50" />
-      
-      {/* Dekorasi Background - Glow Orange */}
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-orange-500/5 rounded-full blur-[100px] pointer-events-none" />
+    <footer className="relative bg-[#060D17] text-white pt-24 pb-12 overflow-hidden border-t border-slate-800/80">
+      {/* Garis Aksen Halus Emas & Biru Safir di Bagian Atas */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
+
+      {/* Dekorasi Background - Subtle Warm & Cool Ambient Glow */}
+      <div className="absolute -bottom-24 -left-20 w-80 h-80 bg-blue-600/10 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute top-10 right-0 w-72 h-72 bg-amber-400/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-20">
           {/* Kolom Brand */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-4 space-y-6">
             <BrandLogo />
-            <p className="text-slate-400 leading-relaxed max-w-sm text-sm font-medium">
-              Studio kreatif spesialis pembuatan miniature custom dengan presisi tinggi. Menghadirkan detail tanpa batas untuk setiap proyek eksklusif Anda.
+            <p className="text-slate-400 leading-relaxed max-w-sm text-sm font-light">
+              Studio kreatif penyedia cinderamata korporat kustom, gift set
+              eksklusif, plakat, dan merchandise bernilai estetika tinggi untuk
+              memperkuat impresi instansi serta momen berharga Anda.
             </p>
-            <div className="flex items-center gap-3">
-              {[Instagram, Facebook, Twitter, Youtube].map((Icon, idx) => (
-                <a 
-                  key={idx} 
-                  href="#" 
-                  className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-orange-500 hover:-translate-y-1 transition-all duration-300 border border-white/5 group"
+            <div className="flex items-center gap-3 pt-2">
+              {[
+                { Icon: Instagram, link: "https://instagram.com" },
+                { Icon: Facebook, link: "https://facebook.com" },
+                { Icon: Twitter, link: "https://twitter.com" },
+                { Icon: Youtube, link: "https://youtube.com" },
+              ].map(({ Icon, link }, idx) => (
+                <a
+                  key={idx}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white/[0.04] flex items-center justify-center hover:bg-sky-500 hover:text-white text-slate-400 hover:-translate-y-1 transition-all duration-300 border border-white/5 shadow-sm"
                 >
-                  <Icon size={18} className="text-slate-400 group-hover:text-white" />
+                  <Icon size={18} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Kolom Koleksi Miniature */}
-          <div className="lg:col-span-2 space-y-6">
-            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-orange-500">Kategori</h4>
-            <div className="space-y-4 text-sm font-medium text-slate-400">
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Miniatur Kapal</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Maket Arsitektur</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Diorama Custom</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Miniatur Alat Berat</p>
+          {/* Kolom Koleksi Kategori */}
+          <div className="lg:col-span-2 space-y-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+              Kategori
+            </h4>
+            <div className="space-y-3 text-sm font-light text-slate-300">
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Corporate Gift Set
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Plakat & Trophy
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Custom Tumbler
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Leather Goods
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Eco Merchandise
+              </p>
             </div>
           </div>
 
-          {/* Kolom Informasi */}
-          <div className="lg:col-span-2 space-y-6">
-            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-orange-500">Navigasi</h4>
-            <div className="space-y-4 text-sm font-medium text-slate-400">
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Tentang Kami</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Proses Produksi</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">E-Katalog</p>
-              <p className="hover:text-orange-500 cursor-pointer transition-colors">Kontak</p>
+          {/* Kolom Navigasi */}
+          <div className="lg:col-span-2 space-y-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+              Navigasi
+            </h4>
+            <div className="space-y-3 text-sm font-light text-slate-300">
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Tentang Kami
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Katalog Lengkap
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Mitra Rekanan
+              </p>
+              <p className="hover:text-sky-400 cursor-pointer transition-colors">
+                Hubungi Kami
+              </p>
             </div>
           </div>
 
-          {/* Kolom Newsletter */}
-          <div className="lg:col-span-4 space-y-6">
-            <h4 className="text-xs font-black uppercase tracking-[0.2em] text-orange-500">Update Proyek</h4>
-            <p className="text-sm text-slate-400 font-medium">
-              Dapatkan informasi mengenai proyek terbaru dan penawaran spesial langsung di email Anda.
+          {/* Kolom Newsletter / Quick Inquiries */}
+          <div className="lg:col-span-4 space-y-5">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+              Katalog & Penawaran
+            </h4>
+            <p className="text-sm text-slate-400 font-light leading-relaxed">
+              Dapatkan pembaruan katalog musiman dan penawaran korporat khusus
+              langsung ke kotak masuk email Anda.
             </p>
-            <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Email anda..." 
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:border-orange-500 transition-colors text-white"
+            <form onSubmit={(e) => e.preventDefault()} className="relative">
+              <input
+                type="email"
+                placeholder="Alamat email Anda..."
+                className="w-full bg-white/[0.04] border border-white/10 rounded-2xl px-5 py-3.5 pr-14 text-sm focus:outline-none focus:border-sky-400 transition-colors text-white placeholder-slate-500"
               />
-              <button className="absolute right-2 top-2 bottom-2 px-4 bg-orange-500 rounded-xl hover:bg-orange-600 transition-all flex items-center justify-center">
-                <Send size={16} />
+              <button
+                type="submit"
+                aria-label="Kirim Email"
+                className="absolute right-2 top-2 bottom-2 px-3.5 bg-gradient-to-r from-blue-600 to-sky-500 rounded-xl hover:from-blue-500 hover:to-sky-400 transition-all flex items-center justify-center text-white shadow-sm active:scale-95"
+              >
+                <Send size={15} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-[10px] tracking-[0.3em] uppercase font-black">
-            © {new Date().getFullYear()} RUMPUN ART WORK. ALL RIGHTS RESERVED.
+        <div className="pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-[11px] tracking-wider uppercase font-medium">
+            © {new Date().getFullYear()} DIAMETER SOUVENIR. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex gap-6 text-[10px] font-black uppercase tracking-widest text-slate-600">
-            <span className="hover:text-orange-500 cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-orange-500 cursor-pointer transition-colors">Terms of Service</span>
+          <div className="flex gap-6 text-[11px] font-medium tracking-wider text-slate-500">
+            <span className="hover:text-sky-400 cursor-pointer transition-colors">
+              Kebijakan Privasi
+            </span>
+            <span className="hover:text-sky-400 cursor-pointer transition-colors">
+              Syarat & Ketentuan
+            </span>
           </div>
         </div>
       </div>

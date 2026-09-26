@@ -1,52 +1,73 @@
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageCircle, ArrowRight, Send } from 'lucide-react';
+import { motion } from "framer-motion";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+  ArrowRight,
+  Send,
+  Sparkles,
+} from "lucide-react";
 
 function ContactSection() {
   const contactInfo = [
     {
       title: "Email",
-      text: "Kirim konsep atau penawaran proyek",
-      link: "mailto:rumpunartwork@gmail.com",
+      text: "Kirim konsep, brief desain, atau penawaran proyek",
+      link: "mailto:hello@diametersouvenir.com",
       icon: <Mail size={24} />,
-      color: "bg-slate-900"
+      color: "bg-blue-600/20 text-sky-400 border border-sky-400/30",
     },
     {
-      title: "Telepon",
-      text: "Konsultasi langsung dengan tim teknis",
-      link: "tel:+6285183010279",
+      title: "Telepon / WhatsApp",
+      text: "Konsultasi langsung bersama tim konsultan kami",
+      link: "https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20pemesanan%20katalog%20souvenir.",
       icon: <Phone size={24} />,
-      color: "bg-orange-500"
+      color:
+        "bg-gradient-to-tr from-blue-600 to-sky-500 text-white shadow-lg shadow-blue-500/25",
     },
     {
-      title: "Lokasi",
-      text: "Kunjungi workshop & studio kami",
+      title: "Studio & Workshop",
+      text: "Kunjungi workshop & sample display room kami",
       link: "https://maps.app.goo.gl/Uk6WCW4DQP8b7frB9",
       icon: <MapPin size={24} />,
-      color: "bg-slate-800"
-    }
+      color: "bg-[#0F2744] text-sky-400 border border-sky-500/30",
+    },
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section
+      id="contact"
+      className="py-24 bg-[#071526] overflow-hidden relative text-white border-t border-[#0F2744]"
+    >
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none -z-0" />
+      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-0" />
 
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-20"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Send className="text-orange-500" size={18} />
-            <span className="text-orange-600 font-black text-xs uppercase tracking-[0.3em]">Get In Touch</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-blue-500/10 text-sky-400 border border-sky-400/30 mb-6 backdrop-blur-sm">
+            <Sparkles size={13} className="text-sky-400 animate-pulse" />
+            <span>Connect With Us</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight">
-            Siap Mewujudkan <br className="hidden md:block" />
-            <span className="text-orange-500 italic">Miniature Impian Anda?</span>
+
+          <h2 className="text-4xl md:text-6xl font-extralight tracking-tight leading-tight">
+            Siap Mewujudkan Cenderamata <br className="hidden md:block" />
+            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-200 to-white italic">
+              Eksklusif Perusahaan Anda?
+            </span>
           </h2>
-          <p className="text-lg text-slate-500 mt-8 max-w-2xl mx-auto font-medium leading-relaxed">
-            Konsultasikan kebutuhan miniature arsitektur, kendaraan, atau diorama custom Anda secara gratis dengan tim ahli kami.
+          <p className="text-base sm:text-lg text-slate-300/80 mt-6 max-w-2xl mx-auto font-light leading-relaxed">
+            Diskusikan kebutuhan merchandise korporat, plakat penghargaan, gift
+            set eksekutif, atau cinderamata kustom Anda bersama tim desainer
+            Diameter Souvenir.
           </p>
         </motion.div>
 
@@ -60,54 +81,76 @@ function ContactSection() {
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -12 }}
-              className="group relative p-10 bg-white border border-slate-100 rounded-[3rem] shadow-sm hover:shadow-2xl hover:shadow-orange-100/50 transition-all duration-500 flex flex-col items-center text-center"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8 }}
+              className="group relative p-10 bg-[#0F2744]/40 backdrop-blur-xl border border-sky-500/20 rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_40px_-15px_rgba(56,189,248,0.25)] hover:border-sky-400/60 transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
             >
-              <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl group-hover:rotate-12 transition-all duration-300`}>
+              {/* Subtle Card Glow Effect saat Hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div
+                className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300 relative z-10`}
+              >
                 {item.icon}
               </div>
-              <h3 className="text-xl font-black text-slate-900 mb-3 tracking-tight">{item.title}</h3>
-              <p className="text-slate-500 font-medium mb-8 leading-relaxed text-sm">{item.text}</p>
-              <div className="mt-auto flex items-center text-orange-600 font-black text-[10px] uppercase tracking-[0.2em] group-hover:gap-3 transition-all">
+
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight relative z-10">
+                {item.title}
+              </h3>
+
+              <p className="text-slate-300/80 font-light mb-8 leading-relaxed text-sm relative z-10">
+                {item.text}
+              </p>
+
+              <div className="mt-auto flex items-center gap-2 text-sky-400 font-semibold text-xs uppercase tracking-widest group-hover:gap-3 transition-all relative z-10">
                 <span>Hubungi Sekarang</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </div>
             </motion.a>
           ))}
         </div>
 
-        {/* Floating Contact Card (CTA Proyek Besar) */}
+        {/* Floating Contact Card (CTA Proyek Besar Korporasi) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-20 bg-slate-950 rounded-[3.5rem] p-10 md:p-20 text-center text-white relative overflow-hidden border border-white/5 shadow-2xl"
+          transition={{ duration: 0.7 }}
+          className="mt-20 bg-gradient-to-br from-[#0b1c33] via-[#071526] to-[#040d18] rounded-[3rem] p-10 md:p-16 text-center text-white relative overflow-hidden border border-sky-500/25 shadow-2xl"
         >
-          {/* Decorative Orange Glows */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-orange-500/10 rounded-full blur-[100px] -mr-40 -mt-40 animate-pulse"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-[100px] -ml-32 -mb-32"></div>
+          {/* Decorative Sapphire Glows */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-sky-500/15 rounded-full blur-[110px] pointer-events-none animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
 
-          <h3 className="text-3xl md:text-5xl font-black mb-8 relative z-10 leading-tight">
-            Punya Proyek Miniature <br /> Skala Besar atau Custom?
+          <h3 className="text-3xl md:text-5xl font-light mb-6 relative z-10 leading-tight tracking-tight">
+            Kebutuhan Pengadaan Massal <br />
+            <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-200 to-white">
+              Atau Desain Khusus Skala Besar?
+            </span>
           </h3>
-          <p className="text-slate-400 mb-12 max-w-2xl mx-auto relative z-10 font-medium text-lg leading-relaxed">
-            Kami melayani pengerjaan miniatur kapal, mobil
-distribusi minyak, maket bangunan, dan pesanan scale
-model lainnya dengan jaminan standar kualitas
+
+          <p className="text-slate-300/80 mb-10 max-w-2xl mx-auto relative z-10 font-light text-base md:text-lg leading-relaxed">
+            Kami siap melayani kebutuhan instansi pemerintah, BUMN, perbankan,
+            dan korporasi swasta dengan kapasitas produksi teruji, ketepatan
+            waktu, dan garansi standar mutu.
           </p>
-          
+
           <motion.a
-            whileHover={{ scale: 1.05, backgroundColor: '#f97316' }}
-            whileTap={{ scale: 0.95 }}
-            href="https://wa.me"
-            className="inline-flex items-center gap-4 bg-white text-slate-950 px-12 py-6 rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] shadow-2xl hover:text-white transition-all relative z-10 group"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20kami%20ingin%20konsultasi%20proyek%20pengadaan%20souvenir%20dan%20merchandise%20korporat."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-600 text-white px-10 py-5 rounded-2xl font-semibold text-xs uppercase tracking-widest shadow-xl shadow-blue-950/50 hover:from-blue-500 hover:to-sky-500 transition-all relative z-10 group active:scale-95"
           >
-            <MessageCircle size={24} className="fill-current text-orange-500 group-hover:text-white transition-colors" />
+            <MessageCircle
+              size={20}
+              className="fill-current text-sky-200 group-hover:rotate-12 transition-transform"
+            />
             <span>KONSULTASI VIA WHATSAPP</span>
           </motion.a>
         </motion.div>
-
       </div>
     </section>
   );
