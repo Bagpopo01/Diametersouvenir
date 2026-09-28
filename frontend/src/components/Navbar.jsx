@@ -102,7 +102,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
             {/* Tombol Konsultasi CTA */}
             {!isSearchOpen && (
               <a
-                href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
+                href="https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden lg:inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-sky-600 text-white px-5 py-2 rounded-full text-xs font-semibold tracking-wider uppercase shadow-md hover:shadow-sky-500/25 hover:from-blue-500 hover:to-sky-500 active:scale-95 transition-all"
@@ -151,7 +151,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
 
             <div className="pt-2">
               <a
-                href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
+                href="https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex justify-center items-center gap-2 bg-blue-600 text-white py-3 rounded-xl text-xs font-semibold tracking-wider uppercase shadow-md active:scale-95"

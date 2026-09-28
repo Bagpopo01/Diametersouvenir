@@ -21,7 +21,7 @@ function ContactSection() {
     {
       title: "Telepon / WhatsApp",
       text: "Konsultasi langsung bersama tim konsultan kami",
-      link: "https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20pemesanan%20katalog%20souvenir.",
+      link: "https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20pemesanan%20katalog%20souvenir.",
       icon: <Phone size={24} />,
       color:
         "bg-gradient-to-tr from-blue-600 to-sky-500 text-white shadow-lg shadow-blue-500/25",
@@ -139,7 +139,7 @@ function ContactSection() {
           <motion.a
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20kami%20ingin%20konsultasi%20proyek%20pengadaan%20souvenir%20dan%20merchandise%20korporat."
+            href="https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20kami%20ingin%20konsultasi%20proyek%20pengadaan%20souvenir%20dan%20merchandise%20korporat."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-sky-600 text-white px-10 py-5 rounded-2xl font-semibold text-xs uppercase tracking-widest shadow-xl shadow-blue-950/50 hover:from-blue-500 hover:to-sky-500 transition-all relative z-10 group active:scale-95"

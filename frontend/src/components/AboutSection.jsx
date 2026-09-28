@@ -75,7 +75,7 @@ export default function AboutSection() {
             <button
               onClick={() =>
                 window.open(
-                  "https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20proyek%20souvenir%20dan%20merchandise.",
+                  "https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20proyek%20souvenir%20dan%20merchandise.",
                   "_blank",
                 )
               }

@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 // 1. IMPORT GAMBAR DARI ASSETS
-import heroImg from "../assets/3.png";
+import heroImg from "../assets/3.jpg";
 
 export default function HeroSection() {
   return (
@@ -75,7 +75,7 @@ export default function HeroSection() {
               </Button>
 
               <a
-                href="https://wa.me/6281259724486?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
+                href="https://wa.me/6285183010279?text=Halo%20Diameter%20Souvenir%2C%20saya%20ingin%20konsultasi%20tentang%20pemesanan%20katalog%20souvenir."
                 target="_blank"
                 rel="noreferrer"
                 className="h-14 px-8 rounded-2xl text-sm font-semibold border-2 border-slate-200 hover:border-[#0F2744] hover:text-[#0F2744] transition-all bg-white text-slate-700 flex items-center justify-center gap-2 shadow-sm"

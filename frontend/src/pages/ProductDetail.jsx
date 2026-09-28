@@ -94,7 +94,7 @@ const ProductDetail = () => {
   const handleWhatsApp = () => {
     const message = `Halo Diameter Souvenir, saya tertarik dengan cenderamata: ${product.name} (SKU: ${product.sku || "DHS-PROD"}). Mohon informasi penawaran dan spesifikasi detailnya.`;
     window.open(
-      `https://wa.me/6281259724486?text=${encodeURIComponent(message)}`,
+      `https://wa.me/6285183010279?text=${encodeURIComponent(message)}`,
       "_blank",
     );
   };
